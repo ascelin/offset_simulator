@@ -54,7 +54,7 @@ osim.run <- function(user_global_params = NULL, user_simulation_params = NULL, u
               global_input_data$site_characteristics$landscape_dims[1], 
               global_input_data$site_characteristics$landscape_dims[2],
               #global_input_data$site_characteristics$site_num)
-              length(input_data_object$site_characteristics$land_parcels))
+              length(global_input_data$site_characteristics$land_parcels))
 
     flog.info('%s potential development sites, %s potential offset sites',
               length(current_output_data$index_object$available_indexes$devs), 
@@ -66,7 +66,7 @@ osim.run <- function(user_global_params = NULL, user_simulation_params = NULL, u
               round(estimate_illegal_sites(simulation_params_group[[scenario_ind]]$unregulated_loss_prob, 
                                            global_input_data$global_params$time_steps, 
                                            #global_input_data$site_characteristics$site_num))) 
-                                           length(input_data_object$site_characteristics$land_parcels) ))) 
+                                           length(global_input_data$site_characteristics$land_parcels) ))) 
 
     ##### TODO(Isaac) test whether can set check and set seed if necessary much earlier in the code before run_initialise_routines() is called
     if (global_input_data$global_params$number_of_cores > 1 && global_input_data$global_params$set_seed == TRUE){
